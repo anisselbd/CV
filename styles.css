@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Icônes compétences */
+.competences-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.competences-header h2 {
+    margin: 0;
+}
+
+.competence-icons {
+    display: flex;
+    gap: 0.7em;
+    align-items: center;
+
+    margin-top: -25px;
+}
+
+.competence-icons img {
+    height: 32px;
+    width: auto;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+
+
+
+body {
+    background: linear-gradient(135deg, #f0f4ff, #d3d9ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em 0;
+}
+
+.cv-container {
+    max-width: 1100px;
+    width: 99vw;
+    margin: 1vw auto;
+    background: #e9eaf8;
+    border-radius: 1.2em;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+    overflow: hidden;
+    padding-bottom: 3vw;
+}
+
+.cv-header {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 3vw 2vw 2vw 2vw;
+    text-align: center;
+}
+
+.cv-header h1 {
+    font-size: 2.8em;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+}
+
+.cv-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    list-style: none;
+    margin-top: 1.2em;
+}
+
+.cv-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.cv-nav a:hover {
+    color: #ffd700;
+}
+
+.cv-main {
+    padding: 3vw 2vw;
+}
+
+.cv-section {
+    margin-bottom: 3vw;
+    background: #fafaff;
+    border-radius: 0.8em;
+    box-shadow: 0 0.2em 0.8em rgba(102, 126, 234, 0.06);
+    padding: 2vw;
+}
+
+.cv-section h2 {
+    color: #667eea;
+    font-size: 1.6em;
+    margin-bottom: 0.8em;
+    border-bottom: 0.1em solid #e0e0e0;
+    padding-bottom: 0.4em;
+}
+
+.cv-flex-row {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 3vw;
+}
+
+.experience-section,
+.education-section {
+    flex: 1;
+}
+
+.experience-section ul,
+.education-section ul {
+    padding-left: 2vw;
+}
+
+.experience-section li,
+.education-section li {
+    margin-bottom: 0.7em;
+}
+
+.experience-section ul ul,
+.education-section ul ul {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    padding-left: 2vw;
+}
+
+.skills-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-section li {
+    background: #e9ecef;
+    border-radius: 1em;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    color: #333;
+    box-shadow: 0 0.1em 0.4em rgba(102, 126, 234, 0.04);
+}
+
+
+.danger-btn:hover {
+    background: #d32f2f;
+    transform: scale(1.5);
+}
+
+/* Section profil */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #667eea;
+}
+
+.profile-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+
+.trainer-modal[style*="display: flex"] {
+    display: flex !important;
+}
+
+.trainer-photo {
+    max-width: 1000vw;
+    max-height: 1000vh;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+/*  zoom sur ma photo de profil */
+.profile-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.profile-modal-photo {
+    max-width: 60vw;
+    max-height: 60vh;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+    transform: scale(0.7);
+    opacity: 0.5;
+    transition: transform 0.3s cubic-bezier(.4, 2, .3, 1), opacity 0.3s;
+}
+
+.profile-modal.active {
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.profile-modal.active .profile-modal-photo {
+    transform: scale(1.6);
+    opacity: 1;
+}
+
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    z-index: 99;
+}
+
+.contact-section a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Formulaire de contact */
+.contact-form {
+    margin-top: 2em;
+    padding: 1.5em;
+    background: #f8f9fa;
+    border-radius: 0.8em;
+    border: 1px solid #e9ecef;
+}
+
+.contact-form h3 {
+    color: #667eea;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7em;
+    border: 1px solid #ddd;
+    border-radius: 0.4em;
+    font-size: 1em;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.btn-submit {
+    background: #667eea;
+    color: white;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 0.4em;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #5a6fd8;
+}
+
+/* Status du formulaire */
+.form-status {
+    margin-top: 1em;
+    font-weight: 500;
+}
+
+/* pour du responsive mobile à revoir car responsive mais peut etre mieux encore je pense  */
+
+@media (max-width: 900px) {
+    .cv-container {
+        margin: 2vw;
+    }
+
+    .cv-main {
+        padding: 2vw 1vw;
+    }
+
+    .cv-flex-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+
+
+
+.cv-header {
+    background: linear-gradient(270deg, #5a67d8, #7b2ff7, #667eea, #764ba2);
+    background-size: 800% 800%;
+    transition: background-position 0.5s;
+}
+
+.cv-header.hover-anim {
+    animation: bgMove 3s linear infinite;
+}
+
+
+/* animation css pour creer un effet de mouvement dans mon header  */
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* les deux media queries d'après c'est pour le responsive design de ma nav et de mes icons de skill */
+@media (max-width: 900px) {
+  .cv-nav {
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+    padding: 0;
+  }
+  .cv-nav a {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 900px) {
+  .competence-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0;
+    gap: 0.3em;
+  }
+  .competence-icons img {
+    height: 24px;
+    max-width: 48px;
+    margin-bottom: 2px;
+  }
+}
+
+
